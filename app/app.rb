@@ -1,8 +1,9 @@
+ENV["RACK_ENV"] ||= "development"
+
 require 'sinatra/base'
+require 'sinatra/flash'
+require 'sinatra/partial'
 
-class MakersBNB < Sinatra::Base
-  get '/' do
-  end
-
-  run! if app_file == $0
-end
+require_relative 'server'
+require_relative 'controllers/sign_up'
+require_relative 'data_mapper_setup'

@@ -13,6 +13,7 @@ gem 'sinatra-partial'
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'cucumber'
   gem 'rake'
   gem 'pry'
   gem 'coveralls', require: false
