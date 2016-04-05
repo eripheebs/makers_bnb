@@ -11,7 +11,7 @@ class MakersBNB < Sinatra::Base
 
   post '/request/new' do
     request = Request.new
-    # space = Space.get(...)
+    space = Space.get(session[:space])
     space.requests << request
     current_user.requests << request
     request.save
