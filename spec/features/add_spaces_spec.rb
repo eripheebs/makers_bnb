@@ -1,4 +1,4 @@
-feature 'list spaces' do
+feature 'add spaces' do
 
   scenario 'I can add a name, description and price to my space' do
     visit '/new/space'
