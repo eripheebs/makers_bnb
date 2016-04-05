@@ -9,4 +9,6 @@ class Space
   property :description, Text
   property :price, String
 
+belongs_to :user
+
 end
