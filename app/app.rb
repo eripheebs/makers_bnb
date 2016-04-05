@@ -6,6 +6,7 @@ require 'sinatra/partial'
 
 require_relative 'server'
 require_relative 'controllers/sign_up'
+require_relative 'controllers/log_in'
 require_relative 'data_mapper_setup'
 require_relative 'controllers/new_space'
 require_relative 'controllers/spaces'
