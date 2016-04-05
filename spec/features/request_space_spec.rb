@@ -10,4 +10,14 @@ feature 'request space' do
     click_button 'request'
     expect(page).to have_content "You are requesting chris's space"
   end
+
+  scenario '> should be able to pick dates' do
+    add_space
+    click_button 'request'
+    click_button ''
+  end
+
+  scenario '> should be able to cancel and return to spaces page' do
+
+  end
 end
