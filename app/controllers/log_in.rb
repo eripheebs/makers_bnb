@@ -4,6 +4,16 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/log-in' do
-    redirect to('/spaces')
+    user = User.first(email: params[:email])
+    if user.nil?
+      flash.now[:error] = ["User does not exist!"]
+      erb :'log_in/log_in'
+    elsif user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect to('/spaces')
+    else
+      flash.now[:error] = ["Wrong Password"]
+      erb :'log_in/log_in'
+    end
   end
 end

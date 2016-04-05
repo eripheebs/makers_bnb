@@ -7,8 +7,4 @@ class MakersBNB < Sinatra::Base
   set :partial_template_engine, :erb
 
   enable :partial_underscores
-
-  get '/spaces' do
-
-  end
 end
