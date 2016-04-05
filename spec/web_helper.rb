@@ -47,3 +47,9 @@ def sign_up_same_email
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
 end
+
+def log_in_correctly
+  visit '/log-in'
+  fill_in :email, with: 'qt_pie@gmail.com'
+  fill_in :password, with: 'password123'
+end
