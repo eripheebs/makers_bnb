@@ -1,14 +1,14 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
 
-class Space
+class Request
   include DataMapper::Resource
 
   property :id, Serial
-  property :name, String
-  property :description, Text
-  property :price, String
+  property :start_date, Date
+  property :end_date, Date
 
-  has n, :requests
+  belongs_to :space
+  belongs_to :user
 
 end
