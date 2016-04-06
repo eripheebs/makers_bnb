@@ -16,4 +16,14 @@ feature 'Control requests to your spaces' do
     visit ('/user_spaces')
     expect{click_button 'reject'}.to change{Request.count}.by -1
   end
+
+  scenario '> user should be able to accept the request' do
+    request_space
+    visit ('/spaces')
+    click_button 'Log out'
+    log_in_correctly
+    visit ('/user_spaces')
+    expect{click_button 'accept'}.to change{Booking.count}.by 1
+    expect(page).to have_content "chris's space"
+  end
 end

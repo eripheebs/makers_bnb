@@ -12,5 +12,6 @@ class Space
   property :price, String
 
   has n, :requests
+  has n, :bookings
 
 end
