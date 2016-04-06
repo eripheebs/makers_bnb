@@ -15,6 +15,8 @@ class MakersBNB < Sinatra::Base
     spaces.name = params[:name]
     spaces.description = params[:description]
     spaces.price = params[:price]
+    spaces.start_date = params[:start_date]
+    spaces.end_date = params[:end_date]
     spaces.save
     @spaces = current_user.spaces
     erb :'spaces/my_spaces'
