@@ -10,15 +10,20 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/request/new' do
-    request = Request.new
+    request = Request.create(start_date: params[:start_date], end_date: params[:end_date])
     space = Space.get(session[:space])
     space.requests << request
     current_user.requests << request
     request.save
+    p request
+    session[:request] = request.id
+    p request.id
     redirect to('/request/confirmation')
   end
 
   get '/request/confirmation' do
+    @space = Space.get(session[:space])
+    @rekwest = Request.get(session[:request])
     erb :'request/confirmation'
   end
 
