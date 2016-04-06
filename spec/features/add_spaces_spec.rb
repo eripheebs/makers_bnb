@@ -4,7 +4,7 @@ feature 'add spaces' do
     add_space
     expect(page).to have_content "chris's space"
     expect(page).to have_content "a lovely calming space"
-    expect(page).to have_content "£20 per night"
+    expect(page).to have_content 20
   end
 
 end

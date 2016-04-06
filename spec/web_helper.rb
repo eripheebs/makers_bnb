@@ -67,7 +67,7 @@ def add_space
   visit '/new/space'
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
-  fill_in :price, with: "£20 per night"
+  fill_in :price, with: 20
   click_button('submit')
 end
 
