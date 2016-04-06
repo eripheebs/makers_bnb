@@ -8,6 +8,9 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
 
+  has n, :spaces
+  has n, :requests
+
   validates_format_of :email, as: :email_address
   validates_confirmation_of :password
   validates_uniqueness_of :email
@@ -16,8 +19,6 @@ class User
   property :username, String, required: true, unique: true
   property :email, String, format: :email_address, required: true, unique: true
   property :password_digest, Text
-
-  has n, :requests
 
   def password=(password)
   @password = password
