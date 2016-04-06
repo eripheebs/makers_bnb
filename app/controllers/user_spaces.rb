@@ -1,8 +1,7 @@
 class MakersBNB < Sinatra::Base
 
   get '/user_spaces' do
-
-    @spaces = User.get(session[:user_id]).spaces.all
+    @spaces = @current_user.spaces.all
     erb :'spaces/spaces'
   end
 

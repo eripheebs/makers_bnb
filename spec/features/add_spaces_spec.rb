@@ -1,7 +1,8 @@
 feature 'add spaces' do
 
   scenario 'I can add a name, description and price to my space' do
-    visit '/new/space'
+    sign_up_correctly
+    click_button 'add_space'
     fill_in :name, with: "chris's space"
     fill_in :description, with: "a lovely calming space"
     fill_in :price, with: "£20 per night"
