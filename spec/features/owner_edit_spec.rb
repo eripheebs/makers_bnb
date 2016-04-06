@@ -1,6 +1,7 @@
 feature 'owner edit function' do
   scenario 'space owner can amend details' do
     add_space
+    visit('/user_spaces')
     click_button 'edit'
     fill_in :name, with: "chris's space"
     fill_in :description, with: "hell hole"

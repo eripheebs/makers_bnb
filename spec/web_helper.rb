@@ -76,7 +76,8 @@ end
 def request_space
   sign_up_correctly
   add_space
-  click_button 'all_spaces'
+  click_button 'Log out'
+  user_2_sign_up
   click_button 'request'
   fill_in :start_date, with: '2016/05/01'
   fill_in :end_date, with: '2016/05/02'
@@ -86,9 +87,17 @@ end
 def request_space_out_of_range
   sign_up_correctly
   add_space
-  click_button 'all_spaces'
   click_button 'request'
   fill_in :start_date, with: '2016/07/12'
   fill_in :end_date, with: '2016/07/20'
   click_button 'Submit'
+end
+
+def user_2_sign_up
+  visit '/sign-up'
+  fill_in :username, with: 'dweeb'
+  fill_in :email, with: 'dweeb@gmail.com'
+  fill_in :password, with: 'password123'
+  fill_in :password_confirmation, with: 'password123'
+  click_button 'Sign up'
 end

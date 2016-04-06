@@ -7,7 +7,7 @@ feature 'space belongs to a user' do
       fill_in :description, with: "a lovely calming space"
       fill_in :price, with: 20
       click_button 'submit'
-      expect(current_path).to eq('/user_spaces')
+      expect(current_path).to eq('/spaces')
 
     end
 

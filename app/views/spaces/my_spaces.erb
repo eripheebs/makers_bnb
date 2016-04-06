@@ -12,6 +12,16 @@
         <button id='edit' type='submit' name='edit' value='<%=space.id%>'>
         Edit</button>
       </form>
+      <%if space.requests %>
+        <% space.requests.each do |request| %>
+        <p>Your space has been requested by <%=User.get(request.user_id).username%> from <%=request.start_date%> to <%=request.end_date%></p>
+        <form action='/booking/create' method='post'>
+          <button type='submit' name='accept' value="<%=request.id%>">accept</button>
+        </form><form action='/user_spaces/delete' method='post'>
+          <button type='submit' name='reject' value="<%=request.id%>">reject</button>
+        </form>
+        <%end%>
+      <%end%>
     </li>
   <% end %>
 
