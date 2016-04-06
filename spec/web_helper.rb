@@ -63,6 +63,7 @@ def log_in_incorrectly
 end
 
 def add_space
+  sign_up_correctly
   visit '/new/space'
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
@@ -73,6 +74,7 @@ end
 def request_space
   sign_up_correctly
   add_space
+  click_button 'all_spaces'
   click_button 'request'
   fill_in :start_date, with: '2016/05/01'
   fill_in :end_date, with: '2016/05/02'
