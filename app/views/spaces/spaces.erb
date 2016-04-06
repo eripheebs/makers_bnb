@@ -5,5 +5,9 @@
     <%= space.name %>
     <%= space.description %>
     <%= space.price %>
+    <form action='/request/make' method='post'>
+      <button id='request' type='submit' name='request' value='<%=space.id%>'>
+      Request Space</button>
+    </form>
   </li>
 <% end %>

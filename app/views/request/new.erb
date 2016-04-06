@@ -1,0 +1,17 @@
+<body>
+  <h2>You are requesting <%=@space.name%></h2>
+  <h2> Pick your start and end dates </h2>
+  <div>
+    <form action='/request/new' method='post'>
+      <input id='date-selector' type='date' name='start_date'></input>
+      <input id='date-selector' type='date' name='end_date'></input>
+      <input type='submit' value='Submit'></input>
+    </form>
+  </div>
+  <div>
+  <form action='/spaces' method='get'>
+    <button id='cancel' type='submit' name='cancel'>
+    Cancel</button>
+  </form>
+</div>
+</body>

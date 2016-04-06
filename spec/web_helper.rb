@@ -61,3 +61,20 @@ def log_in_incorrectly
   fill_in :password, with: 'jazzyiscool'
   click_button 'Log in'
 end
+
+def add_space
+  visit '/new/space'
+  fill_in :name, with: "chris's space"
+  fill_in :description, with: "a lovely calming space"
+  fill_in :price, with: "£20 per night"
+  click_button('submit')
+end
+
+def request_space
+  sign_up_correctly
+  add_space
+  click_button 'request'
+  fill_in :start_date, with: '2016/05/01'
+  fill_in :end_date, with: '2016/05/02'
+  click_button 'Submit'
+end
