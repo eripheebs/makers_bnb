@@ -8,7 +8,6 @@ feature 'space belongs to a user' do
       fill_in :price, with: "£20 per night"
       click_button 'submit'
       expect(current_path).to eq('/user_spaces')
-      # expect(page).to have_content
 
     end
 
