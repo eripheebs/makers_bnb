@@ -15,9 +15,7 @@ class MakersBNB < Sinatra::Base
     space.requests << request
     current_user.requests << request
     request.save
-    p request
     session[:request] = request.id
-    p request.id
     redirect to('/request/confirmation')
   end
 

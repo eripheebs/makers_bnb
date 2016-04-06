@@ -22,6 +22,10 @@ feature 'request space' do
   end
 
   scenario '> should be able to cancel and return to spaces page' do
-
+    sign_up_correctly
+    add_space
+    click_button 'request'
+    click_button 'cancel'
+    expect(page.current_path).to eq('/spaces')
   end
 end
