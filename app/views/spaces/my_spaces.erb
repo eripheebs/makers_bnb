@@ -6,6 +6,8 @@
       <%= space.name %>
       <%= space.description %>
       <%= space.price %>
+      <%= space.start_date %>
+      <%= space.end_date %>
       <form action='/user_spaces/edit' method='get'>
         <button id='edit' type='submit' name='edit' value='<%=space.id%>'>
         Edit</button>

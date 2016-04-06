@@ -11,5 +11,7 @@ class Space
   property :name, String
   property :description, Text
   property :price, Integer
+  property :start_date, Date
+  property :end_date, Date
 
 end
