@@ -5,4 +5,19 @@ class MakersBNB < Sinatra::Base
     erb :'spaces/my_spaces'
   end
 
+  get '/user_spaces/edit' do
+    session[:space] = params[:edit]
+    erb :'spaces/edit_space'
+  end
+
+  post '/user_spaces/edit' do
+    spaces = Space.get(session[:space])
+    spaces.name = params[:name]
+    spaces.description = params[:description]
+    spaces.price = params[:price]
+    spaces.save
+    @spaces = current_user.spaces
+    erb :'spaces/my_spaces'
+  end
+
 end
