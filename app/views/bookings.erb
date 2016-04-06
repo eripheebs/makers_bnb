@@ -1,0 +1,17 @@
+<body>
+<h1> Bookings </h1>
+
+  <% @bookings.each do |booking| %>
+    <li>
+      Space: <%= Space.get(booking.space_id).name %>
+      Booked by: <%= User.get(booking.user_id).username %>
+      Start Date: <%=booking.start_date%>
+      End Date: <%=booking.end_date%>
+      Price per night: <%= Space.get(booking.space_id).price %>
+    </li>
+  <%end%>
+
+  <form class="all_spaces" action="/spaces" method="get">
+    <button type="submit" name="spaces">Back to Spaces</button>
+  </form>
+</body>

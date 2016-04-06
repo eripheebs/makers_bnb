@@ -16,4 +16,9 @@ class MakersBNB < Sinatra::Base
       erb :'log_in/log_in'
     end
   end
+
+  post '/log-out' do
+    session[:user_id] = nil
+    redirect to('/')
+  end
 end

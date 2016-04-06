@@ -22,4 +22,9 @@ class MakersBNB < Sinatra::Base
     erb :'spaces/my_spaces'
   end
 
+  post '/user_spaces/delete' do
+    rekwest = Request.get(params[:reject])
+    rekwest.destroy
+    redirect to('/user_spaces')
+  end
 end

@@ -20,4 +20,10 @@ feature 'Log in' do
     log_in_correctly
     expect(page).to have_content 'User does not exist!'
   end
+
+  scenario '> should be able to log out from spaces' do
+    sign_up_correctly
+    click_button 'Log out'
+    expect(current_path).to eq('/')
+  end
 end

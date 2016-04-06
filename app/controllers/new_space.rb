@@ -9,7 +9,7 @@ class MakersBNB < Sinatra::Base
                       end_date: params[:end_date])
     current_user.spaces << space
     space.save
-    redirect to('/user_spaces')
+    redirect to('/spaces')
   end
 
 end
