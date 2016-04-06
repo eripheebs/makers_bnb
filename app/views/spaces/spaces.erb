@@ -1,4 +1,7 @@
 <h1>Spaces</h1>
+<form action="/log-out" method="post">
+  <button type="submit" value="Log out">Log out</button>
+</form>
 
 <% @spaces.each do |space| %>
   <li>
@@ -11,3 +14,7 @@
     </form>
   </li>
 <% end %>
+
+<form class="add_space" action="/new/space" method="get">
+  <input type="submit" value="add_space" placeholder="Add space">
+</form>
