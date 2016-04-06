@@ -5,6 +5,8 @@
     <%= space.name %>
     <%= space.description %>
     <%= space.price %>
+    <%= space.start_date %>
+    <%= space.end_date %>
     <form action='/request/make' method='post'>
       <button id='request' type='submit' name='request' value='<%=space.id%>'>
       Request Space</button>
