@@ -1,11 +1,13 @@
 feature 'request space' do
   scenario '> can click button to make request' do
+    sign_up_correctly
     add_space
     click_button 'request'
     expect(page.current_path).to eq('/request/new')
   end
 
   scenario '> should confirm which space you have requested' do
+    sign_up_correctly
     add_space
     click_button 'request'
     expect(page).to have_content "You are requesting chris's space"
