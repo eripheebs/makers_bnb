@@ -10,13 +10,18 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/request/new' do
-    request = Request.create(start_date: params[:start_date], end_date: params[:end_date])
-    space = Space.get(session[:space])
-    space.requests << request
-    current_user.requests << request
-    request.save
-    session[:request] = request.id
-    redirect to('/request/confirmation')
+    @space = Space.get(session[:space])
+    request = Request.new(start_date: params[:start_date], end_date: params[:end_date])
+    if request.start_date > @space.start_date && request.end_date < @space.end_date
+      @space.requests << request
+      current_user.requests << request
+      request.save
+      session[:request] = request.id
+      redirect to('/request/confirmation')
+    else
+      flash.now[:error] = ["#{@space.name} is not available for those dates!"]
+      erb :'request/new'
+    end
   end
 
   get '/request/confirmation' do
