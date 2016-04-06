@@ -30,4 +30,10 @@ class MakersBNB < Sinatra::Base
     erb :'request/view'
   end
 
+  post '/request/delete' do
+    rekwest = Request.get(params[:cancel_request])
+    rekwest.destroy
+    redirect to('/requests_made')
+  end
+
 end

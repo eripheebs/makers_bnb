@@ -1,3 +1,4 @@
+<body>
 <h1>Requests</h1>
 
 <% @rekwests.each do |rekwest| %>
@@ -5,5 +6,16 @@
     <%= Space.get(rekwest.space_id).name %>
     <%= rekwest.start_date %>
     <%= rekwest.end_date %>
+    <form action='/request/delete' method='post'>
+      <button type='submit' name='cancel_request' value="<%=rekwest.id%>">
+      cancel request</button>
+    </form>
   </li>
 <% end %>
+
+<form action='/spaces' method='get'>
+  <button type='submit' name='view spaces'>
+  view spaces</button>
+</form>
+
+</body>

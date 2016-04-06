@@ -31,4 +31,11 @@ feature 'request space' do
     expect(page).to have_content "chris's space"
   end
 
+  scenario '> should be able to cancel a request on viewing page' do
+    request_space
+    click_button 'view requests'
+    expect{click_button 'cancel'}.to change{Request.count}.by -1
+    expect(page.current_path).to eq('/requests_made')
+  end
+
 end
