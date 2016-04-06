@@ -25,4 +25,9 @@ class MakersBNB < Sinatra::Base
     erb :'request/confirmation'
   end
 
+  get '/requests_made' do
+    @rekwests = current_user.requests
+    erb :'request/view'
+  end
+
 end

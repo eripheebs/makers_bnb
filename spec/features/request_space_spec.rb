@@ -12,12 +12,7 @@ feature 'request space' do
   end
 
   scenario '> should be able to pick dates' do
-    sign_up_correctly
-    add_space
-    click_button 'request'
-    fill_in :start_date, with: '2016/05/01'
-    fill_in :end_date, with: '2016/05/02'
-    expect{click_button 'Submit'}.to change{Request.count}.by 1
+    expect{request_space}.to change{Request.count}.by 1
     expect(page).to have_content "You have requested chris's space for dates: 2016-05-01 to 2016-05-02"
   end
 
@@ -28,4 +23,12 @@ feature 'request space' do
     click_button 'cancel'
     expect(page.current_path).to eq('/spaces')
   end
+
+  scenario '> shoud be able to view all requests' do
+    request_space
+    click_button 'view requests'
+    expect(page.current_path).to eq('/requests_made')
+    expect(page).to have_content "chris's space"
+  end
+
 end

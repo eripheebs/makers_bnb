@@ -1,4 +1,10 @@
 <body>
   <h2>You have requested <%=@space.name%></h2>
   <h2> for dates: <%=@rekwest.start_date%> to <%=@rekwest.end_date%></h2>
+
+  <form action='/requests_made' method='get'>
+    <button type='submit' name='view requests'>
+    view requests</button>
+  </form>
+
 </body>

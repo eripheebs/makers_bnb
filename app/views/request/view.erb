@@ -1,0 +1,9 @@
+<h1>Requests</h1>
+
+<% @rekwests.each do |rekwest| %>
+  <li>
+    <%= Space.get(rekwest.space_id).name %>
+    <%= rekwest.start_date %>
+    <%= rekwest.end_date %>
+  </li>
+<% end %>
