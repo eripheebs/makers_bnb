@@ -10,6 +10,7 @@ gem 'selenium-webdriver'
 gem 'bcrypt'
 gem 'sinatra-flash'
 gem 'sinatra-partial'
+gem 'pony'
 group :test do
   gem 'rspec'
   gem 'capybara'
