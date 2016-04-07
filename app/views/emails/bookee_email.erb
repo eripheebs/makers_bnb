@@ -1,0 +1,7 @@
+Hey <%= current_user.username %>,
+
+You have confirmed <%=User.get(@booking.user_id).username%>
+
+<%=User.get(@booking.user_id).username%> has booked <%=Space.get(@booking.space_id).name%>!
+
+Have a fabulous day!
