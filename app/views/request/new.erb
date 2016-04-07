@@ -4,8 +4,8 @@
   <h2> Pick your start and end dates </h2>
   <div>
     <form action='/request/new' method='post'>
-      <input id='date-selector' type='date' name='start_date'></input>
-      <input id='date-selector' type='date' name='end_date'></input>
+      <input id='date-selector' type='date' name='start_date' min="<%=@space.start_date%>" max="<%=@space.end_date%>"></input>
+      <input id='date-selector' type='date' name='end_date' min="<%=@space.start_date%>" max="<%=@space.end_date%>"></input>
       <input type='submit' value='Submit'></input>
     </form>
   </div>

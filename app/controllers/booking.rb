@@ -2,7 +2,7 @@ class MakersBNB < Sinatra::Base
   post '/booking/create' do
     rekwest = Request.get(params[:accept])
     booking = Booking.new(start_date: rekwest.start_date, end_date: rekwest.end_date)
-    current_user.bookings << booking
+    User.get(rekwest.user_id).bookings << booking
     Space.get(rekwest.space_id).bookings << booking
     booking.save
     session[:booking]=booking.id
@@ -11,7 +11,7 @@ class MakersBNB < Sinatra::Base
   end
 
   get ('/bookings') do
-    @bookings = current_user.bookings
+    @bookings = current_user.spaces.bookings
     erb :bookings
   end
 end
