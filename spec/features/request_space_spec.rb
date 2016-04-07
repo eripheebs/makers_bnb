@@ -1,15 +1,11 @@
 feature 'request space' do
   scenario '> can click button to make request' do
-    sign_up_correctly
-    add_space
-    click_button 'request'
+    make_request
     expect(page.current_path).to eq('/request/new')
   end
 
   scenario '> should confirm which space you have requested' do
-    sign_up_correctly
-    add_space
-    click_button 'request'
+    make_request
     expect(page).to have_content "You are requesting chris's space"
   end
 
@@ -19,9 +15,7 @@ feature 'request space' do
   end
 
   scenario '> should be able to cancel and return to spaces page' do
-    sign_up_correctly
-    add_space
-    click_button 'request'
+    make_request
     click_button 'cancel'
     expect(page.current_path).to eq('/spaces')
   end
@@ -38,6 +32,12 @@ feature 'request space' do
     click_button 'view requests'
     expect{click_button 'cancel'}.to change{Request.count}.by -1
     expect(page.current_path).to eq('/requests_made')
+  end
+
+  scenario '> should not be able to request your own space' do
+    add_space
+    click_button 'request'
+    expect(page).to have_content "You cannot request your own space!"
   end
 
 end
