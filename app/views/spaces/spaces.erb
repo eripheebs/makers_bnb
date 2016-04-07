@@ -1,30 +1,37 @@
-<h1>Spaces</h1>
-<form action="/log-out" method="post">
-  <button type="submit" value="Log out">Log out</button>
-</form>
-
-<h2><%if flash[:error]%><%= flash[:error][0]%><%end%></h2>
-
-<% @spaces.each do |space| %>
-  <li>
-    <%= space.name %>
-    <%= space.description %>
-    <%= space.price %>
-    <%= space.start_date %>
-    <%= space.end_date %>
-    <form action='/request/make' method='post'>
-      <button id='request' type='submit' name='request' value='<%=space.id%>'>
-      Request Space</button>
+<body>
+  <h1>Spaces</h1>
+    <form action="/log-out" method="post">
+      <button type="submit" value="Log out">Log out</button>
     </form>
-  </li>
-<% end %>
 
-<form action='/user_spaces' method='get'>
-  <button id='my_spaces' type='submit' name='my_spaces'>
-  My spaces</button>
-</form>
+  <h2><%if flash[:error]%><%= flash[:error][0]%><%end%></h2>
 
-<form action='/new/space' method='get'>
-  <button id='add_space' type='submit' name='add_space'>
-  Add a space</button>
-</form>
+  <div class='all_spaces_box'>
+    <ul id='spaces'>
+      <% @spaces.each do |space| %>
+        <li>
+          <div class='space_box'>
+            <%= space.name %>
+            <%= space.description %>
+            <%= space.price %>
+            <%= space.start_date %>
+            <%= space.end_date %>
+            <form action='/request/make' method='post'>
+              <button id='request' type='submit' name='request' value='<%=space.id%>'>
+              Request Space</button>
+            </form>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <form class="my_spaces" action="/user_spaces" method="get">
+    <button type='submit' name='my_spaces' value="my_spaces"> My spaces </button>
+  </form>
+
+  <form class="add_space" action="/new/space" method="get">
+    <button type="submit" name='add_space' value="add_space"> Add Space </button>
+  </form>
+
+</body>

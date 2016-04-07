@@ -2,14 +2,21 @@ body{
   font-family: 'Abel', sans-serif;
 }
 
-.btn{
-  border-radius: 42px;
-  padding: 11px 20px 10px 20px;
-  margin: 10px;
+button[type="submit" i] {
+   width: 32.5%;
+   min-width: 310;
+   max-width: 410;
+   border: none;
+   background-color: transparent;
+   font-family: Futura;
+   text-transform: uppercase;
+   color: black;
+   font-size: 0.9em;
+   border: 1px solid black;
+   padding-left: 0;
 }
-
-.btn:hover{
-  opacity: 0.6;
+button[type="submit" i]:hover {
+  opacity: 0.4;
 }
 
 .field{
@@ -17,4 +24,50 @@ body{
   padding: 11px 20px 10px 20px;
   background-color: #d9d9d9;
   font-weight: bolder;
+}
+
+h1{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+div.all_spaces_box{
+  width: 50%;
+  height: 300px;
+  margin: 0 auto;
+  width: 30%;
+  min-width: 310;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+ width: 12px;
+ height: 12px;
+ }
+
+ ::-webkit-scrollbar-track {
+ border: 1px solid yellowgreen;
+ border-radius: 10px;
+ }
+
+ ::-webkit-scrollbar-thumb {
+ background: yellowgreen;
+ border-radius: 10px;
+ }
+
+ ::-webkit-scrollbar-thumb:hover {
+ background: #88ba1c;
+ }
+
+ div.space_box{
+   border: 1px solid black;
+   padding: 10px 0px;
+   margin: 20px 50px;
+   position: relative;
+   background-color: #ff66ff;
+ }
+
+ul#spaces{
+  list-style-type: none;
+  font-size: 14px;
 }
