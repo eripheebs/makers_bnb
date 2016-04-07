@@ -64,7 +64,7 @@ end
 
 def add_space
   sign_up_correctly
-  visit '/new/space'
+  click_button "add_space"
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
   fill_in :price, with: 20
@@ -73,23 +73,20 @@ def add_space
   click_button('submit')
 end
 
+def make_request
+  add_space
+  click_button 'Log out'
+  user_2_sign_up
+  click_button 'request'
+end
+
 def request_space
-  sign_up_correctly
   add_space
   click_button 'Log out'
   user_2_sign_up
   click_button 'request'
   fill_in :start_date, with: '2016/05/01'
   fill_in :end_date, with: '2016/05/02'
-  click_button 'Submit'
-end
-
-def request_space_out_of_range
-  sign_up_correctly
-  add_space
-  click_button 'request'
-  fill_in :start_date, with: '2016/07/12'
-  fill_in :end_date, with: '2016/07/20'
   click_button 'Submit'
 end
 

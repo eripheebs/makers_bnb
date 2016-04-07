@@ -1,7 +1,14 @@
 class MakersBNB < Sinatra::Base
   post '/request/make' do
-    session[:space] = params[:request]
-    redirect to('/request/new')
+  space = Space.get(params[:request])
+    if current_user.spaces.include? space
+      flash.now[:error] = ["You cannot request your own space!"]
+      @spaces = Space.all
+      erb :'spaces/spaces'
+    else
+      session[:space] = params[:request]
+      redirect to('/request/new')
+    end
   end
 
   get '/request/new' do

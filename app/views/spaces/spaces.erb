@@ -3,6 +3,8 @@
   <button type="submit" value="Log out">Log out</button>
 </form>
 
+<h2><%if flash[:error]%><%= flash[:error][0]%><%end%></h2>
+
 <% @spaces.each do |space| %>
   <li>
     <%= space.name %>
@@ -23,6 +25,6 @@
 </form>
 
 <form action='/new/space' method='get'>
-  <button id='add_spaces' type='submit' name='add_space'>
+  <button id='add_space' type='submit' name='add_space'>
   Add a space</button>
 </form>
