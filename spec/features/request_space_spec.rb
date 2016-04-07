@@ -40,4 +40,12 @@ feature 'request space' do
     expect(page).to have_content "You cannot request your own space!"
   end
 
+  scenario '> end date must be after start date' do
+    make_request
+    fill_in :start_date, with: '2016/06/01'
+    fill_in :end_date, with: '2016/05/02'
+    click_button 'Submit'
+    expect(page).to have_content "End date must be after start date"
+  end
+
 end

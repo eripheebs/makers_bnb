@@ -7,9 +7,14 @@ class MakersBNB < Sinatra::Base
     space = Space.new(name: params[:name], description: params[:description],
                       price: params[:price], start_date: params[:start_date],
                       end_date: params[:end_date])
-    current_user.spaces << space
-    space.save
-    redirect to('/spaces')
+    if space.start_date >= space.end_date
+      flash.now[:error] = ["End date must be after start date"]
+      erb :'spaces/new'
+    else
+      current_user.spaces << space
+      space.save
+      redirect to('/spaces')
+    end
   end
 
 end
