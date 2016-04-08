@@ -1,13 +1,16 @@
 <body>
-<h1> Bookings for Your Spaces </h1>
+<h1> Bookings You've Made </h1>
 
   <% @bookings.each do |booking| %>
     <li>
       Space: <%= Space.get(booking.space_id).name %>
-      Booked by: <%= User.get(booking.user_id).username %>
+      Owener: <%= User.get(Space.get(booking.space_id).user_id).username %>
       Start Date: <%=booking.start_date%>
       End Date: <%=booking.end_date%>
       Price per night: <%= Space.get(booking.space_id).price %>
+      <form class="payment" action="/payment" method="get">
+        <button type="submit" name="payment" value='<%=booking.id%>'>Pay</button>
+      </form>
     </li>
   <%end%>
 

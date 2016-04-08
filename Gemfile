@@ -11,6 +11,7 @@ gem 'bcrypt'
 gem 'sinatra-flash'
 gem 'sinatra-partial'
 gem 'pony'
+gem 'stripe'
 group :test do
   gem 'rspec'
   gem 'capybara'
