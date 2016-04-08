@@ -15,4 +15,9 @@ class MakersBNB < Sinatra::Base
     @bookings = current_user.spaces.bookings
     erb :bookings
   end
+
+  get ('/my_bookings') do
+    @bookings = current_user.bookings
+    erb :my_bookings
+  end
 end

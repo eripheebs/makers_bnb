@@ -8,6 +8,11 @@ class MakersBNB < Sinatra::Base
 
   enable :partial_underscores
 
+  set :publishable_key, ENV['PUBLISHABLE_KEY']
+  set :secret_key, ENV['SECRET_KEY']
+
+  Stripe.api_key = settings.secret_key
+
   helpers do
     def current_user
       @current_user ||= User.get(session[:user_id])
