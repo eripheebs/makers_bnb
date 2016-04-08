@@ -8,6 +8,11 @@ class MakersBNB < Sinatra::Base
   post '/spaces/filtered' do
     filter_start_date = Date.parse(params[:start_date])
     filter_end_date = Date.parse(params[:end_date])
+    if filter_start_date >= filter_end_date
+      flash.now[:error] = ["End date must be after start date"]
+      @spaces = Space.all
+      erb :'spaces/spaces'
+    end
     @filter_dates = (filter_start_date..filter_end_date).to_a
     @spaces = []
     Space.all.each do |space|
