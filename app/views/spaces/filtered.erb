@@ -4,8 +4,6 @@
       <button type="submit" value="Log out">Log out</button>
     </form>
 
-  <h2><%if flash[:error]%><%= flash[:error][0]%><%end%></h2>
-
   <form class="filter_spaces" action="/spaces/filtered" method="post">
     <input id='date-selector' type='date' name='start_date' required></input>
     <input id='date-selector' type='date' name='end_date' required></input>
