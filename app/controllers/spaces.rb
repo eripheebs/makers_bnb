@@ -17,7 +17,7 @@ class MakersBNB < Sinatra::Base
         @booked_dates += booking_array
         booking_array = []
       end
-      if space.start_date < filter_start_date && space.end_date > filter_end_date
+      if space.start_date <= filter_start_date && space.end_date >= filter_end_date
         if (@filter_dates & @booked_dates).empty?
           @spaces << space
         end
