@@ -11,15 +11,20 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/user_spaces/edit' do
-    spaces = Space.get(session[:space])
-    spaces.name = params[:name]
-    spaces.description = params[:description]
-    spaces.price = params[:price]
-    spaces.start_date = params[:start_date]
-    spaces.end_date = params[:end_date]
-    spaces.save
-    @spaces = current_user.spaces
-    erb :'spaces/my_spaces'
+    space = Space.get(session[:space])
+    space.name = params[:name]
+    space.description = params[:description]
+    space.price = params[:price]
+    space.start_date = params[:start_date]
+    space.end_date = params[:end_date]
+    if space.start_date >= space.end_date
+      flash.now[:error] = ["End date must be after start date"]
+      erb :'spaces/edit_space'
+    else
+      space.save
+      @spaces = current_user.spaces
+      erb :'spaces/my_spaces'
+    end
   end
 
   post '/user_spaces/delete' do
