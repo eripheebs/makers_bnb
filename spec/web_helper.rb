@@ -70,7 +70,7 @@ def add_space
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
   fill_in :price, with: 20
@@ -86,14 +86,14 @@ def add_two_spaces
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
   fill_in :price, with: 20
   fill_in :start_date, with: '2016/04/10'
   fill_in :end_date, with: '2016/06/15'
   click_button('submit')
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "nick's space"
   fill_in :description, with: "a luxurious and decadent space"
   fill_in :price, with: 200
@@ -103,7 +103,7 @@ def add_two_spaces
 end
 
 def add_another_space
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "nick's space"
   fill_in :description, with: "a luxurious and decadent space"
   fill_in :price, with: 200
@@ -119,7 +119,7 @@ def make_request
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
   fill_in :price, with: 20
@@ -133,7 +133,7 @@ def make_request
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button 'request'
+  click_button 'Request Space'
 end
 
 def request_space
@@ -143,7 +143,7 @@ def request_space
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
   fill_in :price, with: 20
@@ -157,7 +157,7 @@ def request_space
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button 'request'
+  click_button 'Request Space'
   fill_in :start_date, with: '2016/05/01'
   fill_in :end_date, with: '2016/05/02'
   click_button 'Submit'
@@ -179,7 +179,7 @@ def filter_spaces_after_booking
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "chris's space"
   fill_in :description, with: "a lovely calming space"
   fill_in :price, with: 20
@@ -193,21 +193,21 @@ def filter_spaces_after_booking
   fill_in :password, with: 'password123'
   fill_in :password_confirmation, with: 'password123'
   click_button 'Sign up'
-  click_button 'request'
+  click_button 'Request Space'
   fill_in :start_date, with: '2016/05/01'
   fill_in :end_date, with: '2016/05/02'
   click_button 'Submit'
-  click_button "view requests"
-  click_button "view spaces"
+  click_link "my_requests"
+  click_link "all_spaces"
   click_button "Log out"
   click_button "Log in"
   fill_in :email, with: 'qt_pie@gmail.com'
   fill_in :password, with: 'password123'
   click_button 'Log in'
-  click_button "my_spaces"
+  click_link "my_spaces"
   click_button "accept"
   visit '/spaces'
-  click_button "add_space"
+  click_link "add_space"
   fill_in :name, with: "nick's space"
   fill_in :description, with: "a luxurious and decadent space"
   fill_in :price, with: 200

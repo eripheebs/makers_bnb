@@ -2,7 +2,7 @@ feature 'owner edit function' do
   scenario 'space owner can amend details' do
     add_space
     visit('/user_spaces')
-    click_button 'edit'
+    click_button 'Edit'
     fill_in :name, with: "chris's space"
     fill_in :description, with: "hell hole"
     fill_in :price, with: 20
@@ -16,7 +16,7 @@ feature 'owner edit function' do
   scenario '< end date must be after start date' do
     add_space
     visit('/user_spaces')
-    click_button 'edit'
+    click_button 'Edit'
     fill_in :name, with: "chris's space"
     fill_in :description, with: "a space"
     fill_in :price, with: 20

@@ -1,20 +1,29 @@
 <body>
 <h1> Bookings You've Made </h1>
 
+<div class='all_spaces_box'>
+  <ul id='spaces'>
   <% @bookings.each do |booking| %>
     <li>
-      Space: <%= Space.get(booking.space_id).name %>
-      Owener: <%= User.get(Space.get(booking.space_id).user_id).username %>
-      Start Date: <%=booking.start_date%>
-      End Date: <%=booking.end_date%>
-      Price per night: <%= Space.get(booking.space_id).price %>
+      <div class='space_box'>
+        <div>
+          <img src="<%=rand(3)%>.jpg">
+        </div>
+        <div class='space_name'>
+          <%= Space.get(booking.space_id).name %>
+        </div>
+      Owner: <%= User.get(Space.get(booking.space_id).user_id).username %>
+      <br>
+      Price: £<%= Space.get(booking.space_id).price %>
+      <br>
+      Booked from: <%=booking.start_date%>
+      until <%=booking.end_date%>
       <form class="payment" action="/payment" method="get">
-        <button type="submit" name="payment" value='<%=booking.id%>'>Pay</button>
+        <button class="payment" type="submit" name="payment" value='<%=booking.id%>'>Pay</button>
       </form>
     </li>
   <%end%>
+</ul>
+</div>
 
-  <form class="all_spaces" action="/spaces" method="get">
-    <button type="submit" name="spaces">Back to Spaces</button>
-  </form>
 </body>

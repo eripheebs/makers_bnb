@@ -1,15 +1,12 @@
 <body>
   <h1>Spaces</h1>
-    <form action="/log-out" method="post">
-      <button type="submit" value="Log out">Log out</button>
-    </form>
 
   <h2><%if flash[:error]%><%= flash[:error][0]%><%end%></h2>
 
   <form class="filter_spaces" action="/spaces/filtered" method="post">
     <input id='date-selector' type='date' name='start_date' required></input>
     <input id='date-selector' type='date' name='end_date' required></input>
-    <input type="submit" value="submit">
+    <input type="submit" value="Search">
   </form>
 
   <div class='all_spaces_box'>
@@ -17,13 +14,19 @@
       <% @spaces.each do |space| %>
         <li>
           <div class='space_box'>
-            <%= space.name %>
+            <div>
+              <img src="<%=rand(3)%>.jpg">
+            </div>
+            <div class='space_name'><%= space.name %>
+            </div>
             <%= space.description %>
-            <%= space.price %>
-            <%= space.start_date %>
-            <%= space.end_date %>
+            <br>
+            Price: £<%= space.price %>
+            <br>
+            Available from: <%= space.start_date %>
+             until <%= space.end_date %>
             <form action='/request/make' method='post'>
-              <button id='request' type='submit' name='request' value='<%=space.id%>'>
+              <button class='space_button' type='submit' name='request' value='<%=space.id%>'>
               Request Space</button>
             </form>
           </div>
@@ -31,23 +34,6 @@
       <% end %>
     </ul>
   </div>
-
-  <form class="my_spaces" action="/user_spaces" method="get">
-    <button type='submit' name='my_spaces' value="my_spaces"> My spaces </button>
-  </form>
-
-  <form class="my_requests" action="/requests_made" method="get">
-    <button type='submit' name='my_requests' value="my_requests"> My requests </button>
-  </form>
-
-  <form class="add_space" action="/new/space" method="get">
-    <button type="submit" name='add_space' value="add_space"> Add Space </button>
-  </form>
-
-<form action='/my_bookings' method='get'>
-  <button id='my_bookings' type='submit' name='my_bookings'>
-  Bookings You've Made</button>
-</form>
 
 
 </body>

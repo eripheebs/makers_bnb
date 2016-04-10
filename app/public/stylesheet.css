@@ -1,73 +1,224 @@
 body{
-  font-family: 'Abel', sans-serif;
-}
-
-button[type="submit" i] {
-   width: 32.5%;
-   min-width: 310;
-   max-width: 410;
-   border: none;
-   background-color: transparent;
-   font-family: Futura;
-   text-transform: uppercase;
-   color: black;
-   font-size: 0.9em;
-   border: 1px solid black;
-   padding-left: 0;
-}
-button[type="submit" i]:hover {
-  opacity: 0.4;
-}
-
-.field{
-  border-radius: 42px;
-  padding: 11px 20px 10px 20px;
-  background-color: #d9d9d9;
-  font-weight: bolder;
+ font-family: 'Abel', sans-serif;
 }
 
 h1{
-  text-transform: uppercase;
-  letter-spacing: 5px;
+ text-transform: uppercase;
+ letter-spacing: 3px;
 }
 
+h2{
+ /*text-transform: uppercase;*/
+ letter-spacing: 3px;
+}
+
+/*   HEADER   */
+div#header-fixed {
+ position:fixed;
+ top:0px; margin:auto;
+ z-index:100000;
+ width:100%;
+}
+
+div#logo{
+  height: 50%;
+}
+
+a {
+  /*width: 32.5%;
+  min-width: 310;
+  max-width: 410;*/
+  text-decoration: none;
+  width: 200px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  font-size: 0.9em;
+  padding-left: 0;
+  margin: 8px 8px 8px 8px;
+}
+
+a:hover {
+ opacity: 0.4;
+}
+
+button[class="log_out" i] {
+  top: 0;
+  position:fixed;
+  text-decoration: none;
+  width: 200px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  font-size: 0.9em;
+  margin: 0px 0px 0px 30%;
+  padding: 10px;
+  float: right;
+}
+
+button[class="log_out" i]:hover {
+ opacity: 0.4;
+}
+/*----------------------------*/
+
+
+/*   INDEX   */
+div#index {
+  background: rgba(255, 255, 255, 0.9);
+  width: 22%;
+  padding: 30px 0px 30px 0px;
+}
+
+button[class="index_button" i] {
+  width: 32.5%;
+  /*min-width: 310;
+  max-width: 410;*/
+  border: none;
+  background-color: transparent;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  font-size: 18px;
+  /*border: 1px solid black;*/
+  padding: 15px 0px 15px 0px;
+}
+
+button[class="index_button" i]:hover {
+ opacity: 0.4;
+}
+/*----------------------------*/
+
+
+/*   SPACES/MY SPACES   */
 div.all_spaces_box{
   width: 50%;
-  height: 300px;
-  margin: 0 auto;
-  width: 30%;
+  margin: 20px;
   min-width: 310;
   overflow: auto;
+  /*background-color: #A8A7A7;*/
+  align: center;
 }
-
-::-webkit-scrollbar {
- width: 12px;
- height: 12px;
- }
-
- ::-webkit-scrollbar-track {
- border: 1px solid yellowgreen;
- border-radius: 10px;
- }
-
- ::-webkit-scrollbar-thumb {
- background: yellowgreen;
- border-radius: 10px;
- }
-
- ::-webkit-scrollbar-thumb:hover {
- background: #88ba1c;
- }
 
  div.space_box{
-   border: 1px solid black;
-   padding: 10px 0px;
-   margin: 20px 50px;
-   position: relative;
-   background-color: #ff66ff;
+   padding: 10px 10px 10px 10px;
+   margin: 10px 10px 10px -30px;
+   align: center;
+   background: #;
+   color: #594F4F;
  }
 
-ul#spaces{
-  list-style-type: none;
-  font-size: 14px;
+ div.space_name{
+  font-weight: bold;
+  font-size: 24px;
 }
+
+ul#spaces {
+ list-style-type: none;
+ font-size: 14px;
+}
+
+div.request{
+  border: 1px solid #594F4F;
+  width: 80%;
+  border-radius: 5px;
+  padding: 0px 0px 15px 0px;
+}
+
+button[class="space_button" i] {
+  width: 20%;
+  /*min-width: 310;
+  max-width: 410;*/
+  background-color: transparent;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  color: #594F4F;
+  font-size: 12px;
+  border: 1px solid #594F4F;
+  border-radius: 5px;
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px
+}
+
+button[class="space_button" i]:hover {
+ opacity: 0.4;
+}
+
+input[type="submit"] {
+  width: 5%;
+  /*min-width: 310;
+  max-width: 410;*/
+  background-color: transparent;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  color: #594F4F;
+  font-size: 12px;
+  border: 1px solid #594F4F;
+  border-radius: 5px;
+  padding: 1px 0px 1px 0px;
+}
+
+input[type="submit"]:hover {
+ opacity: 0.4;
+}
+/*----------------------------*/
+
+
+/*   ADD SPACE   */
+input[type="text"] {
+  margin: 0px 0px 20px 0px;
+}
+input[type="number"] {
+  margin: 20px 0px 20px 0px;
+}
+input[type="date"] {
+  margin: 0px 0px 20px 0px;
+}
+/*----------------------------*/
+
+
+/*   REQUEST   */
+button[class="cancel_request"] {
+  width: 20%;
+  /*min-width: 310;
+  max-width: 410;*/
+  background-color: transparent;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  color: #594F4F;
+  font-size: 12px;
+  border: 1px solid #594F4F;
+  border-radius: 5px;
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
+}
+
+button[class="cancel_request"]:hover {
+ opacity: 0.4;
+}
+/*----------------------------*/
+
+
+/*   REQUEST   */
+button[class="payment"] {
+  width: 20%;
+  /*min-width: 310;
+  max-width: 410;*/
+  background-color: transparent;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  color: #594F4F;
+  font-size: 12px;
+  border: 1px solid #594F4F;
+  border-radius: 5px;
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px
+}
+
+button[class="payment"]:hover {
+ opacity: 0.4;
+}
+/*----------------------------*/

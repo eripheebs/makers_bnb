@@ -1,35 +1,44 @@
 <body>
   <h1>My Spaces</h1>
 
-  <% @spaces.each do |space| %>
-    <li>
-      <%= space.name %>
-      <%= space.description %>
-      <%= space.price %>
-      <%= space.start_date %>
-      <%= space.end_date %>
-      <form action='/user_spaces/edit' method='get'>
-        <button id='edit' type='submit' name='edit' value='<%=space.id%>'>
-        Edit</button>
-      </form>
-      <%if space.requests %>
-        <% space.requests.each do |request| %>
-        <p>Your space has been requested by <%=User.get(request.user_id).username%> from <%=request.start_date%> to <%=request.end_date%></p>
-        <form action='/booking/create' method='post'>
-          <button type='submit' name='accept' value="<%=request.id%>">accept</button>
-        </form><form action='/user_spaces/delete' method='post'>
-          <button type='submit' name='reject' value="<%=request.id%>">reject</button>
+  <div class='all_spaces_box'>
+    <ul id='spaces'>
+    <% @spaces.each do |space| %>
+      <li>
+        <div class='space_box'>
+          <div>
+            <img src="<%=rand(3)%>.jpg">
+          </div>
+          <div class='space_name'><%= space.name %>
+          </div>
+          <%= space.description %>
+          <br>
+          Price: £<%= space.price %>
+          <br>
+          Available from: <%= space.start_date %>
+           until <%= space.end_date %>
+        <form action='/user_spaces/edit' method='get'>
+          <button class='space_button' type='submit' name='edit' value='<%=space.id%>'>
+          Edit</button>
         </form>
+        <div class="request">
+        <%if space.requests %>
+          <% space.requests.each do |request| %>
+          <p>Your space has been requested by <%=User.get(request.user_id).username%> from <%=request.start_date%> to <%=request.end_date%></p>
+          <form action='/booking/create' method='post'>
+            <button class='space_button' type='submit' name='accept' value="<%=request.id%>">accept</button>
+          </form><form action='/user_spaces/delete' method='post'>
+            <button class='space_button' type='submit' name='reject' value="<%=request.id%>">reject</button>
+          </form>
+          <%end%>
+          <%else%>
+          <p>Your space has no requests</p>
         <%end%>
-      <%end%>
-    </li>
-  <% end %>
+        </div>
+      </li>
+    <% end %>
+      </div>
+    </ul>
+  </div>
 
-
-  <form class="add_space" action="/new/space" method="get">
-    <button type="submit" value="add_space">add space</button>
-  </form>
-  <form class="all_spaces" action="/spaces" method="get">
-    <button type="submit" value="all_spaces">all spaces</button>
-  </form>
 </body>

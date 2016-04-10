@@ -1,11 +1,17 @@
 <body>
+  <h1>Add Space</h1>
   <h3><%if flash[:error]%><%= flash[:error][0]%><%end%></h3>
   <form class="add_space" action="/new/space" method="post">
+    <br>
     <input type="text" name="name" placeholder="Name" required>
+    <br>
     <textarea cols="50" rows="5" name="description" placeholder="Description" required></textarea>
+    <br>
     <input type="number" name="price" placeholder="Price" required>
+    <br>
     <input id='date-selector' type='date' name='start_date' required></input>
     <input id='date-selector' type='date' name='end_date' required></input>
+    <br>
     <input type="submit" value="submit">
   </form>
 </body>

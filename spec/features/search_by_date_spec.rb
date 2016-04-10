@@ -4,7 +4,7 @@ feature 'search by date' do
     add_two_spaces
     fill_in :start_date, with: "2016/05/24"
     fill_in :end_date, with: "2016/06/30"
-    click_button 'submit'
+    click_button 'Search'
     expect(page).to have_content "nick's space"
     expect(page).not_to have_content "chris's space"
   end
@@ -13,7 +13,7 @@ feature 'search by date' do
     filter_spaces_after_booking
     fill_in :start_date, with: "2016/04/24"
     fill_in :end_date, with: "2016/05/15"
-    click_button 'submit'
+    click_button 'Search'
     expect(page).to have_content "nick's space"
     expect(page).not_to have_content "chris's space"
   end

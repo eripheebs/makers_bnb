@@ -36,7 +36,7 @@ feature 'request space' do
 
   scenario '> should not be able to request your own space' do
     add_space
-    click_button 'request'
+    click_button 'Request Space'
     expect(page).to have_content "You cannot request your own space!"
   end
 

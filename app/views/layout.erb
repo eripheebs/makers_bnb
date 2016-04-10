@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abel">
-  <link rel="stylesheet" type="text/css" href="/stylesheet.css">
-  <center>
+ <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abel">
+ <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+ <center>
 </head>
 
 <body>
-   <%= yield %>
+  <div id ='logo'>
+  <img src='../MakersBNB-logo.png' style='height: 100px'>
+ </div>
+ <%unless @skip_menu %>
+ <div id="menu">
+   <a class="menu_button" href='/spaces' id='all_spaces'>
+     All spaces
+   </a>
+   <a class="menu_button" href='/user_spaces' id='my_spaces'>
+     My spaces
+   </a>
+
+   <a class="menu_button" href="/new/space" id='add_space'>
+       Add Space
+     </a>
+
+    <a class="menu_button" href='/my_bookings' id='my_bookings'>
+     Bookings You've Made
+   </a>
+
+   <a class="menu_button" href="/requests_made" id='my_requests'>
+     My requests
+   </a>
+
+   <form action="/log-out" method="post">
+     <button class="log_out" type="submit" value="Log out">Log out</button>
+   </form>
+   <%end%>
+ </div>
+
+  <%= yield %>
 </body>
