@@ -16,7 +16,7 @@ feature 'request space' do
 
   scenario '> should be able to cancel and return to spaces page' do
     make_request
-    click_button 'cancel'
+    click_button 'Cancel'
     expect(page.current_path).to eq('/spaces')
   end
 
