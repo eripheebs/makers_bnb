@@ -3,7 +3,9 @@
   <form action="/charge" method="post" class="payment">
       <article>
         <label class="amount">
-          <span>Amount: <%=@booking.space.price%></span>
+          <span>Please pay here for your booking of <%=@booking.space.name%>.<br>
+          This space is owned by <%=User.get(@booking.space.user_id).username%><br>
+          Amount: <%=@booking.space.price%></span>
         </label>
       </article>
 
