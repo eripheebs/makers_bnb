@@ -16,6 +16,8 @@ What it can do:
 12. Users can pay for their booking through the Stripe API.
 13. Additionally: we have a branch which has a chatroom for the site (branch 9-chat-functionality)
 
+To dos: styling is on branch: presentation
+
 Installation Instructions
 -------
 ```
@@ -24,3 +26,9 @@ $ cd makers_bnb
 $ bundle
 $ rackup
 ```
+Authors:
+-------
+Jazzy Gasper
+Erika Pheby
+Chris Parker
+Nick Mountjoy
