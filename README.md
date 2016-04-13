@@ -28,7 +28,10 @@ $ rackup
 ```
 Authors:
 -------
--Jazzy Gasper
--Erika Pheby
--Chris Parker
--Nick Mountjoy
+Jazzy Gasper
+
+Erika Pheby
+
+Chris Parker
+
+Nick Mountjoy
