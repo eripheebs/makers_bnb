@@ -26,6 +26,11 @@ $ cd makers_bnb
 $ bundle
 $ rackup
 ```
+
+![Screenshot of MakersBNBApp](https://cloud.githubusercontent.com/assets/16217360/15325712/31c8168a-1c43-11e6-9afd-d9acb1de7d0f.png)
+![Screenshot2 of MakersBNBApp](https://cloud.githubusercontent.com/assets/16217360/15325730/39557cf8-1c43-11e6-8358-83b2d2fbd921.png)
+![Screenshot3 of MakersBNBApp](https://cloud.githubusercontent.com/assets/16217360/15325732/396c8e84-1c43-11e6-83c5-c48daf6e7079.png)
+
 Authors:
 -------
 Jazzy Gasper
