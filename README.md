@@ -21,7 +21,7 @@ To dos: styling is on branch: presentation
 Installation Instructions
 -------
 ```
-$ git clone [insert makers_bnb url]
+$ git clone https://github.com/eripheebs/makers_bnb.git
 $ cd makers_bnb
 $ bundle
 $ rackup
